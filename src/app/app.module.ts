@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CustomersComponent } from './customers/customers.component';
-import { CustomersListComponent } from './customers/customers-list/customers-list.component';
-import { FilterTextboxComponent } from './customers/customers-list/filter-textbox/filter-textbox.component';
-import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { CustomersComponent } from "./customers/customers.component";
+import { CustomersListComponent } from "./customers/customers-list/customers-list.component";
+import { FilterTextboxComponent } from "./customers/customers-list/filter-textbox/filter-textbox.component";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -15,12 +16,8 @@ import { SharedModule } from './shared/shared.module';
     CustomersListComponent,
     FilterTextboxComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
