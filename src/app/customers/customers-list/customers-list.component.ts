@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { ICustomer } from 'src/app/shared/interfaces';
 
@@ -9,8 +9,20 @@ import { ICustomer } from 'src/app/shared/interfaces';
 })
 export class CustomersListComponent implements OnInit {
 
+  private _customers: ICustomer[] = [];
+
+  @Input() get customers(): ICustomer[] {
+    return this._customers;
+  }
+  set customers(value: ICustomer[]) {
+    if (value) {
+      this.filteredCustomers = this._customers = value;
+      this.calculateOrders();
+    }
+  } 
+
   filteredCustomers: ICustomer[] = [];
-  customersOrderTotal: number;
+  customersOrderTotal: number = 0;
   currencyCode: string = 'USD';
   
   constructor() {}
@@ -25,5 +37,10 @@ export class CustomersListComponent implements OnInit {
             this.customersOrderTotal += cust.orderTotal;
         });
     }
+  
+  sort(prop: string) {
+    // change this to service
+
+  }
 
 }
