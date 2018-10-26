@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { FilterTextboxComponent } from './customers/customers-list/filter-textbox/filter-textbox.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterTextboxComponent } from './customers/customers-list/filter-textbo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
